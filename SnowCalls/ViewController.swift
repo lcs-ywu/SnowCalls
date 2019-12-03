@@ -43,7 +43,7 @@ class ViewController: UIViewController {
             
             //Set a variable with all effective phone number inside
             var number = ""
-
+            
             //Loop for every single scalar in each line
             for singleScalar in eachLine {
                 
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
                 
             }
             
-            //Make sure each line has more than 10 numbers,if not,skip this line
+            //Make sure each line has at least 10 numbers,if not,skip this line
             guard number.count >= 10 else {
                 convertResults.text = "\n"
                 return
@@ -83,7 +83,6 @@ class ViewController: UIViewController {
             
             //Set the index for the first 10 numbers because we only need that much
             let first = number.index(number.startIndex, offsetBy: 0)
-
             let second = number.index(number.startIndex, offsetBy: 1)
             let third = number.index(number.startIndex, offsetBy: 2)
             let fourth = number.index(number.startIndex, offsetBy: 3)
