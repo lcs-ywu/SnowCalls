@@ -76,25 +76,26 @@ class ViewController: UIViewController {
             }
             
             //Make sure each line has at least 10 numbers,if not,skip this line
-            guard number.count >= 10 else {
-                convertResults.text = "\n"
-                return
+            if number.count >= 10 {
+                //Set the index for the first 10 numbers because we only need that much
+                let first = number.index(number.startIndex, offsetBy: 0)
+                let second = number.index(number.startIndex, offsetBy: 1)
+                let third = number.index(number.startIndex, offsetBy: 2)
+                let fourth = number.index(number.startIndex, offsetBy: 3)
+                let fifth = number.index(number.startIndex, offsetBy: 4)
+                let sixth = number.index(number.startIndex, offsetBy: 5)
+                let seventh = number.index(number.startIndex, offsetBy: 6)
+                let eighth = number.index(number.startIndex, offsetBy: 7)
+                let ninth = number.index(number.startIndex, offsetBy: 8)
+                let tenth = number.index(number.startIndex, offsetBy: 9)
+                
+                //Print the output in the following format for every line
+                convertResults.text += "\(number[first])\(number[second])\(number[third])-\(number[fourth])\(number[fifth])\(number[sixth])-\(number[seventh])\(number[eighth])\(number[ninth])\(number[tenth])\n"
+                
+            }else{
+                convertResults.text += ""
             }
             
-            //Set the index for the first 10 numbers because we only need that much
-            let first = number.index(number.startIndex, offsetBy: 0)
-            let second = number.index(number.startIndex, offsetBy: 1)
-            let third = number.index(number.startIndex, offsetBy: 2)
-            let fourth = number.index(number.startIndex, offsetBy: 3)
-            let fifth = number.index(number.startIndex, offsetBy: 4)
-            let sixth = number.index(number.startIndex, offsetBy: 5)
-            let seventh = number.index(number.startIndex, offsetBy: 6)
-            let eighth = number.index(number.startIndex, offsetBy: 7)
-            let ninth = number.index(number.startIndex, offsetBy: 8)
-            let tenth = number.index(number.startIndex, offsetBy: 9)
-            
-            //Print the output in the following format for every line
-            convertResults.text += "\(number[first])\(number[second])\(number[third])-\(number[fourth])\(number[fifth])\(number[sixth])-\(number[seventh])\(number[eighth])\(number[ninth])\(number[tenth])\n"
             
         }
         
