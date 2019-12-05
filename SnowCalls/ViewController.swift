@@ -9,7 +9,7 @@
 import UIKit
 
 // UITextViewDelegate - just means we "promise" to implement certain methods on this class, or, also, can mean some functionally is now made available to us
-class ViewController: UIViewController,UITextViewDelegate {
+class ViewController: UIViewController, UITextViewDelegate {
     
     
     // MARK: Properties
@@ -27,6 +27,7 @@ class ViewController: UIViewController,UITextViewDelegate {
         
         // Make this class be the delegate for the input text view
         phoneNumberInput.delegate = self
+        
         // Give the focus to the input textview when the program begins
         phoneNumberInput.text = ""
         convertResults.text = ""
@@ -120,6 +121,7 @@ class ViewController: UIViewController,UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         // Reset the output text view
         convertResults.text = ""
+        print("text view changed!")
     }
     
     
